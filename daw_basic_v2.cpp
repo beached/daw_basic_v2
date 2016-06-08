@@ -111,7 +111,7 @@ namespace daw {
 						keyword{ std::move( Keyword ) }, 
 						arguments{ std::move( args ) } { }
 
-					~basic_line( ) = default;
+					virtual ~basic_line( ) = default;
 				};	// struct basic_line
 
 			}	// namespace anonymous
