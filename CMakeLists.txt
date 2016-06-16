@@ -25,6 +25,7 @@ externalproject_add(
 	header_libraries_prj
 	GIT_REPOSITORY "https://github.com/beached/header_libraries.git"
 	SOURCE_DIR "${CMAKE_BINARY_DIR}/dependencies/header_libraries"
+	BINARY_DIR "${CMAKE_BINARY_DIR}"
 	GIT_TAG "master"
 	PATCH_COMMAND ""
 	INSTALL_DIR "${CMAKE_BINARY_DIR}/install"
@@ -36,6 +37,7 @@ externalproject_add(
 	char_range_prj
 	GIT_REPOSITORY "https://github.com/beached/char_range.git"
 	SOURCE_DIR "${CMAKE_BINARY_DIR}/dependencies/char_range"
+	BINARY_DIR "${CMAKE_BINARY_DIR}"
 	GIT_TAG "master"
 	PATCH_COMMAND ""
 	INSTALL_DIR "${CMAKE_BINARY_DIR}/install"
@@ -47,6 +49,7 @@ externalproject_add(
 	asteroid_prj
 	GIT_REPOSITORY "https://github.com/beached/ASTeroid.git"
 	SOURCE_DIR "${CMAKE_BINARY_DIR}/dependencies/asteroid"
+	BINARY_DIR "${CMAKE_BINARY_DIR}"
 	GIT_TAG "master"
 	PATCH_COMMAND ""
 	INSTALL_DIR "${CMAKE_BINARY_DIR}/install"
