@@ -21,35 +21,44 @@ include_directories( SYSTEM ${Boost_INCLUDE_DIRS} )
 set( HEADER_FOLDER "include" )
 include_directories( ${HEADER_FOLDER} )
 
+if( ${BINARY_DIR} MATCHES "/binary$" )
+    set( DEP_BINARY_DIR "${CMAKE_BINARY_DIR}" )
+else( )
+    set( DEP_BINARY_DIR "${CMAKE_BINARY_DIR}/binary" )
+endif( )
+
 externalproject_add( 
 	header_libraries_prj
 	GIT_REPOSITORY "https://github.com/beached/header_libraries.git"
-	SOURCE_DIR "${CMAKE_BINARY_DIR}/dependencies/header_libraries"
+	SOURCE_DIR "${DEP_BINARY_DIR}/dependencies/header_libraries"
+	BINARY_DIR "${DEP_BINARY_DIR}"
 	GIT_TAG "master"
-	INSTALL_DIR "${CMAKE_BINARY_DIR}/install"
-	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/install
+	INSTALL_DIR "${DEP_BINARY_DIR}/install"
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${DEP_BINARY_DIR}/install
 )
 
 externalproject_add( 
 	char_range_prj
 	GIT_REPOSITORY "https://github.com/beached/char_range.git"
-	SOURCE_DIR "${CMAKE_BINARY_DIR}/dependencies/char_range"
+	SOURCE_DIR "${DEP_BINARY_DIR}/dependencies/char_range"
+	BINARY_DIR "${DEP_BINARY_DIR}"
 	GIT_TAG "master"
-	INSTALL_DIR "${CMAKE_BINARY_DIR}/install"
-	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/install
+	INSTALL_DIR "${DEP_BINARY_DIR}/install"
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${DEP_BINARY_DIR}/install
 )
 
 externalproject_add( 
 	asteroid_prj
 	GIT_REPOSITORY "https://github.com/beached/ASTeroid.git"
-	SOURCE_DIR "${CMAKE_BINARY_DIR}/dependencies/asteroid"
+	SOURCE_DIR "${DEP_BINARY_DIR}/dependencies/asteroid"
+	BINARY_DIR "${DEP_BINARY_DIR}"
 	GIT_TAG "master"
-	INSTALL_DIR "${CMAKE_BINARY_DIR}/install"
-	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/install
+	INSTALL_DIR "${DEP_BINARY_DIR}/install"
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${DEP_BINARY_DIR}/install
 )
 
-include_directories( SYSTEM "${CMAKE_BINARY_DIR}/install/include" )
-link_directories( "${CMAKE_BINARY_DIR}/install/lib" )
+include_directories( SYSTEM "${DEP_BINARY_DIR}/install/include" )
+link_directories( "${DEP_BINARY_DIR}/install/lib" )
 
 include_directories( SYSTEM ${Boost_INCLUDE_DIRS} )
 link_directories( ${Boost_LIBRARY_DIRS} )
