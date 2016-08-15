@@ -26,9 +26,7 @@ externalproject_add(
 	GIT_REPOSITORY "https://github.com/beached/header_libraries.git"
 	SOURCE_DIR "${CMAKE_BINARY_DIR}/dependencies/header_libraries"
 	GIT_TAG "master"
-	PATCH_COMMAND ""
 	INSTALL_DIR "${CMAKE_BINARY_DIR}/install"
-	TEST_COMMAND ""
 	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/install
 )
 
@@ -37,9 +35,7 @@ externalproject_add(
 	GIT_REPOSITORY "https://github.com/beached/char_range.git"
 	SOURCE_DIR "${CMAKE_BINARY_DIR}/dependencies/char_range"
 	GIT_TAG "master"
-	PATCH_COMMAND ""
 	INSTALL_DIR "${CMAKE_BINARY_DIR}/install"
-	TEST_COMMAND ""
 	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/install
 )
 
@@ -48,9 +44,7 @@ externalproject_add(
 	GIT_REPOSITORY "https://github.com/beached/ASTeroid.git"
 	SOURCE_DIR "${CMAKE_BINARY_DIR}/dependencies/asteroid"
 	GIT_TAG "master"
-	PATCH_COMMAND ""
 	INSTALL_DIR "${CMAKE_BINARY_DIR}/install"
-	TEST_COMMAND ""
 	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/install
 )
 
